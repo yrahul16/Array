@@ -1,0 +1,41 @@
+// Reverse array using function.............
+
+#include<iostream>
+#include<limits.h>
+using namespace std;
+void Reverse_Array(int num[] , int size)
+{
+   int start = 0 ;
+   int end = size-1 ;
+   while(start <= end)
+   {
+       swap(num[start],num[end]);
+       start++;
+       end-- ;
+   }
+   //cout<< swap(num[start],num[end]) << endl;
+}
+void PrintArray(int num[], int size)
+{
+    for(int i = 0 ; i < size ; i++)
+    {
+        cout<< num[i]<<" ";
+    }
+}
+int main()
+{
+    int size;
+    cout<<"Kitne size ka array chahte hai"<<endl;
+    cin>>size;
+    int num[100];
+    cout<<"*************************************"<<endl;
+    cout<<"Ab app aray me number input kare"<<endl;
+    for(int i = 0 ; i < size ; i++)
+    {
+        cin>>num[i];
+    }
+    cout<<"*************************************"<<endl;
+    cout<<"Reverse array  " << endl;
+    Reverse_Array(num , size);
+    PrintArray(num , size);
+}

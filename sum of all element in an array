@@ -1,0 +1,32 @@
+// Sum Of array using function.............
+
+#include<iostream>
+#include<limits.h>
+using namespace std;
+int sumOfArray(int num[] , int size)
+{
+    int sum = 0;
+    for(int i = 0 ; i < size ; i++)
+    {
+        sum = sum + num[i] ;
+    }
+    return sum;
+    
+}
+int main()
+{
+    int size;
+    cout<<"Kitne size ka array chahte hai"<<endl;
+    cin>>size;
+    int num[100];
+    cout<<"*************************************"<<endl;
+    cout<<"Ab app aray me number input kare"<<endl;
+    for(int i = 0 ; i < size ; i++)
+    {
+        cin>>num[i];
+    }
+    cout<<"*************************************"<<endl;
+
+    int ans = sumOfArray(num , size);
+    cout<<"Sum of Array is "<< ans << endl;
+}

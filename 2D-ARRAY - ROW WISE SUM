@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+void rowWiseSum(int arr[][4] ,int row , int col){
+     for(int row = 0 ; row < 3 ; row++){
+        int sum = 0;
+        for(int col = 0 ; col < 4 ; col++){
+            sum += arr[row][col] ;
+        }
+        cout<<"Sum of "<<row<<"th row = "<<sum<<endl;
+    }
+}
+int main()
+{
+    //creating 2-d std::array,
+    int arr[3][4];
+    //taking input in 2-d array;
+    //Ye hume column  wise input  dega ;
+    cout<< "Aap number do ji " << endl;
+    for(int col = 0 ; col < 4 ; col++){
+        for( int row = 0 ; row < 3 ; row++){
+            cin >> arr[row][col] ;
+        }
+    }
+    cout<<endl;
+    cout<< "Apka output hai "<<endl;
+    //Ye hume col wise entry de rha ;
+    for(int row = 0 ; row < 3 ; row++){
+        for( int col = 0 ; col < 4 ; col++){
+            //cout<<"index[" << row <<"]["<<col<<"] = " <<arr[row][col] <<endl;
+            cout<<arr[row][col]<< " ";
+        }
+        cout<<endl;
+    }
+    cout<<endl;
+    cout<<"Aapko row wise sum diya jaa rha hai "<<endl;
+    rowWiseSum(arr , 3 , 4 );
+}

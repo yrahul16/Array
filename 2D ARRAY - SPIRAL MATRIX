@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+void spriralPrint(int arr[][4], int row , int col){
+    int firstRow = 0;
+    int firstCol = 0;
+    int lastRow = row-1;
+    int lastCol = col-1;
+    int totalElement = row*col;
+    int count = 0 ; 
+    while(count < totalElement){
+        //print first row...............
+        for(int index = firstCol ; count < totalElement && index <= lastCol ; index++){
+            cout<<arr[firstRow][index]<<" ";
+            count++;
+        }
+        firstRow++;
+        //print last column............
+        for(int index = firstRow ; count < totalElement && index <= lastRow ; index++){
+            cout<<arr[index][lastCol]<<" ";
+            count++;
+        }
+        lastCol--;
+        //print last row ....................
+        for(int index = lastCol ; count < totalElement && index >= firstCol ; index--){
+            cout<<arr[lastCol][index]<<" ";
+            count++;
+        }
+        lastRow--;
+        //print first column...............................
+        for(int index = lastRow ; count < totalElement && index >= firstRow ; index--){
+            cout<<arr[lastRow][index]<<" ";
+            count++;
+        }
+        firstCol++;
+    }
+}
+int main()
+{
+   int arr[3][4] = {{11,12,13,14},{15,16,17,18},{19,20,21,22}};
+   for(int row = 0 ; row < 3 ; row++){
+       for(int col = 0 ; col < 4 ; col++){
+           cout<<arr[row][col]<<" ";
+       }
+       cout<<endl;
+   }
+   cout<<endl;
+   cout<<"Spiral output ----------------"<<endl;
+   spriralPrint(arr , 3 , 4);
+   return 0 ;
+}

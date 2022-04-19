@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+void rotate90(int arr[][3], int row , int col){
+    for(int i = 2 ; i >= 0 ; i--){
+        for(int j = 0 ; j < col ; j++ ){
+            cout<<arr[j][i]<<" ";
+        }
+        cout<<endl;
+    }
+}
+int main()
+{
+    int arr[3][3] = {11,12,13,14,15,16,17,18,19};
+    cout<<"Printing 2D array matrix "<<endl;
+    for(int row = 0 ; row < 3;row++){
+        for(int col = 0 ; col < 3 ; col++){
+            cout<<arr[row][col]<<" ";
+        }
+        cout<<endl;
+    }
+    cout<<"90 degree rotated matrix anti-clock wise "<<endl;
+    rotate90(arr , 3,3);
+}
